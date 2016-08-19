@@ -1,0 +1,43 @@
+$break_point2: 480px;
+$break_point3: 640px;
+$break_point4: 768px;
+$break_point5: 980px;
+$break_point6: 1024px;
+$break_point7: 1200px;
+$break_point8: 1400px;
+
+@mixin breakpoint($name) {
+    @if $name == "phone" {
+        @media screen and (min-width: $break_point2) {
+            @content;
+        }
+    } @else if $name == "phone_big" {
+        @media screen and (min-width: $break_point3) {
+            @content;
+        }
+    } @else if $name == "tablet" {
+        @media screen and (min-width: $break_point4) {
+            @content;
+        }
+    } @else if $name == "tablet_big" {
+        @media screen and (min-width: $break_point5) {
+            @content;
+        }
+    } @else if $name == "desktop_small" {
+        @media screen and (min-width: $break_point6) {
+            @content;
+        }
+    } @else if $name == "desktop" {
+        @media screen and (min-width: $break_point7) {
+            @content;
+        }
+    } @else if $name == "desktop_big" {
+        @media screen and (min-width: $break_point8) {
+            @content;
+        }
+    } @else {
+        @media screen and (min-width: $name) {
+            @content;
+        }
+    }
+}
