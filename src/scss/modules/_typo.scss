@@ -1,0 +1,20 @@
+.m-typo {
+	&.m-typo_primary {
+		font: 300 25px/1 $font-primary;
+		color: $cl-headline;
+		margin-bottom: 12px;
+		@include breakpoint(tablet) {
+			font-size: 40px;
+		}
+		@include breakpoint(desktop_small) {
+			font-size: 60px;
+		}
+	}
+	&.m-typo_secondary {
+		font-size: 14px;
+		color: $cl-grey3B;
+		@include breakpoint(tablet) {
+			font-size: 17px;
+		}
+	}
+}

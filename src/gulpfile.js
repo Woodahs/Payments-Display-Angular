@@ -62,6 +62,11 @@ gulp.task('js', function() {
         }));
 });
 
+gulp.task('images', function() {
+	return gulp.src(config.paths.images)
+		.pipe(gulp.dest(config.paths.dist + 'images'));
+});
+
 gulp.task('html', function() {
     return gulp.src(config.paths.html)
     	.pipe(gulp.dest(config.paths.dist))
@@ -97,4 +102,4 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task('default', ['html', 'js', 'styles', 'watch']);
+gulp.task('default', ['html', 'js', 'images', 'styles', 'watch']);

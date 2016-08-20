@@ -1,0 +1,49 @@
+.m-btn {
+	height: 30px;
+	font-size: 12px;
+	line-height: 12px;
+	white-space: nowrap;
+	font-weight: 600;
+	border-radius: 3px;
+	display: inline-block;
+	padding: 10px 20px;
+	position: relative;
+	@include breakpoint(phone) {
+		margin-left: 5px;
+	}
+	@include breakpoint(tablet) {
+		margin-left: 10px;
+	}
+	&:hover {
+		&:before {
+			visibility: visible;
+			opacity: .15;
+		}
+	}
+	&:before {
+		content: "";
+		background: $cl-black;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: inherit;
+		opacity: 0;
+		visibility: hidden;
+		transition: all .25s ease-in-out;
+	}
+	&.m-btn_primary {
+		color: $cl-white;
+		background: $cl-blue1F;
+		background: linear-gradient(to bottom, $cl-blue6B, $cl-blue1F);
+	}
+	&.m-btn_secondary {
+		color: $cl-grey49;
+		background: $cl-greyC4;
+		background: linear-gradient(to bottom, $cl-greyF2, $cl-greyC4);
+	}
+	span {
+		position: relative;
+	}
+}

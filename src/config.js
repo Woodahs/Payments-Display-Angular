@@ -8,7 +8,8 @@ module.exports = {
         svg: 'images/svg/*.svg',
         dist: '../dist/',
         js: 'js/**/*',
-        html: '*.html'
+        html: '*.html',
+        images: 'images/**/*'
     },
     webpack: {
     	mainEntry: './js/app.js'

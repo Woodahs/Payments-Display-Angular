@@ -1,6 +1,54 @@
 @import "custom/*";
-// @import "symbol/*"; - unccoment this when you have SVG sprite generated
+@import "modules/*";
 
 body {
-	font: 400 14px/1.2 $font-primary;
+	font: 400 14px/1.17 $font-primary;
+	background: url(../images/background.png) repeat;
+	@include breakpoint(tablet) {
+		padding: 0 10px;
+	}
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+.b-mainWrapper {
+	background: $cl-white;
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 10px;
+	border-top: 20px;
+	border-radius: 5px;
+	box-shadow: 0 1px 4px rgba($cl-black, 0.3);
+	position: relative;
+	@include breakpoint(tablet) {
+		padding: 20px;
+		margin-top: 77px;
+	}
+	&:before {
+		content: "";
+		z-index: -1;
+		background: $cl-black;
+		position: absolute;
+		top: -7px;
+		left: -7px;
+		right: -7px;
+		bottom: -7px;
+		border-radius: 10px;
+		opacity: .05;
+	}
+}
+.b-header {
+	text-align: center;
+	padding-bottom: 26px;
+	border-bottom: 1px solid $cl-greyE0;
+}
+.b-search {
+	max-width: 758px;
+	margin: 17px auto 0;
+}
+.b-suppliers {
+	margin-top: 18px;
 }

@@ -1,0 +1,35 @@
+.m-rate {
+	.m-rate_numeric {
+		@include breakpoint(phone) {
+			display: none;
+		}
+	}
+	.m-rate_iconic {
+		display: none;
+		@include breakpoint(phone) {
+			display: block;
+		}
+	}
+	.m-rate_item {
+		&:before {
+			content: "£";
+		}
+		display: inline-block;
+		width: 26px;
+		height: 26px;
+		line-height: 24px;
+		font-size: 15px;
+		font-weight: 700;
+		vertical-align: middle;
+		border: 1px solid $cl-grey7;
+		border-radius: 50%;
+		color: $cl-grey6;
+		background: $cl-greyDA;
+		background: linear-gradient($cl-greyFE, $cl-greyDA);
+		&.is-active {
+			color: $cl-white;
+			background: $cl-blue4C;
+			background: linear-gradient($cl-blue62, $cl-blue4C);
+		}
+	}
+}

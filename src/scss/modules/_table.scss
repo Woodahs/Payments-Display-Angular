@@ -1,0 +1,55 @@
+$rwdBreakpoint: tablet;
+
+.m-table {
+	width: 100%;
+	text-align: center;
+	border: 1px solid $cl-greyE0;
+	.m-table_thead {
+		font-weight: 600;
+		color: $cl-grey6;
+		background: $cl-greyE8;
+		background: linear-gradient(to bottom, $cl-greyEC, $cl-greyE8);
+		@include breakpoint($rwdBreakpoint) {
+			box-shadow: 0 1px 1px rgba($cl-black, .05);
+		}
+	}
+	.m-table_tbody {
+		color: $cl-grey5;
+	}
+	.m-table_tr {
+		&:nth-of-type(2n) {
+			background: $cl-greyF8;
+			background: linear-gradient(to bottom, $cl-greyF8, $cl-greyF6);
+		}
+	}
+	.m-table_th,
+	.m-table_td {
+		vertical-align: middle;
+	}
+	.m-table_th {
+		padding: 10px 10px;
+		@include breakpoint($rwdBreakpoint) {
+			padding: 21px 20px;
+		}
+	}
+	.m-table_td {
+		border: 1px solid $cl-greyE0;
+		padding: 8px 10px;
+		@include breakpoint($rwdBreakpoint) {
+			padding: 12px 20px;
+		}
+	}
+	.m-table_supplier {
+		text-align: left;
+		@include breakpoint($rwdBreakpoint) {
+			padding-left: 28px;
+			width: 50%;
+		}
+		a {
+			color: $cl-grey5;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
