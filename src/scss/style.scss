@@ -28,16 +28,18 @@ body {
 		margin-top: 77px;
 	}
 	&:before {
-		content: "";
-		z-index: -1;
-		background: $cl-black;
-		position: absolute;
-		top: -7px;
-		left: -7px;
-		right: -7px;
-		bottom: -7px;
-		border-radius: 10px;
-		opacity: .05;
+		@include breakpoint(tablet) {
+			content: "";
+			z-index: -1;
+			background: $cl-black;
+			position: absolute;
+			top: -7px;
+			left: -7px;
+			right: -7px;
+			bottom: -7px;
+			border-radius: 10px;
+			opacity: .05;
+		}
 	}
 }
 .b-header {
