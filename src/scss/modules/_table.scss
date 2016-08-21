@@ -4,6 +4,10 @@ $rwdBreakpoint: tablet;
 	width: 100%;
 	text-align: center;
 	border: 1px solid $cl-greyE0;
+	font-size: 12px;
+	@include breakpoint(phone) {
+		font-size: 14px;
+	}
 	.m-table_thead {
 		font-weight: 600;
 		color: $cl-grey6;

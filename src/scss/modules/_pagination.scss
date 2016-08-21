@@ -1,21 +1,32 @@
 .m-pagination {
 	text-align: center;
 	margin-top: 20px;
+	padding: 0 40px;
+	position: relative;
+	min-height: 30px;
+	@include breakpoint(tablet) {
+		padding: 0;
+		min-height: none;
+	}
 	.m-pagination_item {
 		line-height: 1;
 		display: inline-block;
 		color: $cl-grey71;
 		border: 1px solid $cl-greyB;
 		padding: 5px;
-		min-height: 26px;
-		min-width: 26px;
+		line-height: 18px;
+		min-width: 30px;
 		vertical-align: top;
 		border-radius: 3px;
 		background: $cl-greyF6;
 		background: linear-gradient($cl-white, $cl-greyEA);
 		box-shadow: 0 1px 1px rgba($cl-black, .12);
 		transition: background .3s;
-		margin: 0 2px;
+		margin: 0 2px 5px;
+		@include breakpoint(desktop_small) {
+			line-height: 14px;
+			min-width: 26px;
+		}
 		&:not(.is-active) {
 			cursor: pointer;
 		}
@@ -37,7 +48,15 @@
 			pointer-events: none;
 		}
 		&.m-pagination_nav {
-			position: relative;
+			min-height: 30px;
+			position: absolute;
+			top: 0;
+			@include breakpoint(phone_big) {
+				position: relative;
+			}
+			@include breakpoint(desktop_small) {
+				min-height: 26px;
+			}
 			&:hover {
 				&:after {
 					border-color: $cl-white;
@@ -62,11 +81,13 @@
 			}
 		}
 		&.m-pagination_prev {
+			left: 0;
 			&:after {
 				transform: rotate(-135deg);
 			}
 		}
 		&.m-pagination_next {
+			right: 0;
 			&:after {
 				transform: rotate(45deg);
 			}
