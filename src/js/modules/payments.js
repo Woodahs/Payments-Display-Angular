@@ -3,22 +3,29 @@
  */
 
 (function() {
-
     var payments = function($http) {
-        var getMainPage = function() {
-            return $http.get("//test-api.kuria.tshdev.io/")
+        // make HTTP request to payment API with provided query
+        var paymentRequest = function(query) {
+            return $http.get("http://test-api.kuria.tshdev.io/" + query)
                 .then(function(response) {
                     return response.data
                 });
-        }
-
-        var getPaymentList = function(settings) {
-            console.debug(settings);
+        };
+        
+        // get payment list with provided query
+        var getPaymentListFromQuery = function(query) {
+            return paymentRequest(query);
+        };
+        
+        // get payment list with provided data (supplier name, rating, page)
+        var getPaymentList = function(supplier, rating, page) {
+            var query = `?query=${supplier || ""}&rating=${rating || 0}&page=${page || 0}`;
+            return paymentRequest(query);
         };
 
         return {
-            getMainPage: getMainPage,
-            getPaymentList: getPaymentList
+            getPaymentList: getPaymentList,
+            getPaymentListFromQuery: getPaymentListFromQuery
         };
 
     };

@@ -49,11 +49,14 @@
 	} 
 	.m-search_select {
 		color: $cl-grey2;
-		padding: 0 10px;
+		padding: 0 5px;
 		border: 1px solid $cl-greyD6;
 		border-radius: 3px;
 		height: 18px;
 		vertical-align: top;
 		font-size: 12px;
+		option {
+			padding: 0 5px;
+		}
 	}
 }

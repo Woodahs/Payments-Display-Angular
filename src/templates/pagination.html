@@ -1,7 +1,7 @@
 <div class="b-pagination">
 	<div class="m-pagination">
-		<a ng-class="{'is-disabled': !pagination.left}" class="m-pagination_item m-pagination_nav m-pagination_prev"></a>
-		<a ng-repeat="(key, link) in pagination.links" ng-class="{'is-active': pagination.current === key}" class="m-pagination_item">{{ key }}</a>
-		<a ng-class="{'is-disabled': !pagination.right}" class="m-pagination_item m-pagination_nav m-pagination_next"></a>
+		<a ng-class="{'is-disabled': !pagination.left}" ng-click="search({pageOffset: -1})" class="m-pagination_item m-pagination_nav m-pagination_prev"></a>
+		<a ng-repeat="(key, link) in pagination.links" ng-click="search({query: '?' + link})" ng-class="{'is-active': pagination.current == key}" class="m-pagination_item">{{ key }}</a>
+		<a ng-class="{'is-disabled': !pagination.right}" ng-click="search({pageOffset: 1})" class="m-pagination_item m-pagination_nav m-pagination_next"></a>
 	</div>
 </div>
