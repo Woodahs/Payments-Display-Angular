@@ -69,10 +69,21 @@ gulp.task('images', function() {
 
 gulp.task('html', function() {
     return gulp.src(config.paths.html)
+        .pipe(cache('templates'))
     	.pipe(gulp.dest(config.paths.dist))
         .pipe(livereload())
         .pipe(notify({
             message: 'HTML ready!',
+            onLast: true
+        }));
+});
+
+gulp.task('templates', function() {
+    return gulp.src(config.paths.templates)
+    	.pipe(gulp.dest(config.paths.dist + 'templates'))
+        .pipe(livereload())
+        .pipe(notify({
+            message: 'Template reloaded!',
             onLast: true
         }));
 });
@@ -95,11 +106,12 @@ gulp.task('styles', function() {
 
 gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch(config.paths.js, ['lint', 'js']);
+    gulp.watch(config.paths.js, ['js']);
     gulp.watch(config.paths.sass, ['styles']);
     gulp.watch(config.paths.html, ['html']);
+    gulp.watch(config.paths.templates, ['templates']);
     gulp.watch(config.paths.svg, ['svg']);
 });
 
 
-gulp.task('default', ['html', 'js', 'images', 'styles', 'watch']);
+gulp.task('default', ['html', 'templates', 'js', 'images', 'styles', 'watch']);

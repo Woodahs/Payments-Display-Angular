@@ -9,6 +9,7 @@ module.exports = {
         dist: '../dist/',
         js: 'js/**/*',
         html: '*.html',
+        templates: 'templates/*.html',
         images: 'images/**/*'
     },
     webpack: {

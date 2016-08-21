@@ -1,0 +1,14 @@
+<div class="b-search">
+	<form class="m-search" name="paymentSearch">
+		<input ng-model="supplierName" placeholder="Search suppliers" type="text" class="m-search_input">
+		<div class="m-search_buttons">
+			<div class="m-search_selectWrapper">
+				<select class="m-search_select">
+					<option>Select pound rating</option>
+				</select>
+			</div>
+			<a ng-click="resetSearchForm()" class="m-btn m-btn_secondary"><span>Reset</span></a>
+			<a ng-click="search(supplierName)" class="m-btn m-btn_primary"><span>Search</span></a>
+		</div>
+	</form>
+</div>

@@ -7,96 +7,20 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta content="" name="author">
 		<title>Payments Display Angular</title>
-		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&subset=latin-ext" rel="stylesheet"> 
+		<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&subset=latin-ext" rel="stylesheet"> 
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 
 	<body>
-		<section class="b-mainWrapper">
+		<section class="b-mainWrapper" ng-app="paymentsViewer">
 			<header class="b-header">
 				<h1 class="m-typo m-typo_primary">Where your money goes</h1>
 				<h2 class="m-typo m-typo_secondary">Payments made by Chichester District Council to individual suppliers with a value over £500 made within October.</h2>
 			</header>
-			<main class="b-mainContent">
-				<div class="b-search">
-					<div class="m-search">
-						<input placeholder="Search suppliers" type="text" class="m-search_input">
-						<div class="m-search_buttons">
-							<div class="m-search_selectWrapper">
-								<select class="m-search_select">
-									<option>Select pound rating</option>
-								</select>
-							</div>
-							<a href="#" class="m-btn m-btn_secondary"><span>Reset</span></a>
-							<a href="#" class="m-btn m-btn_primary"><span>Search</span></a>
-						</div>
-					</div>
-				</div>
-
-				<div class="b-suppliers">
-					<table class="m-table">
-						<thead class="m-table_thead">
-							<tr class="m-table_tr">
-								<th class="m-table_th m-table_supplier">Supplier</th>
-								<th class="m-table_th m-table_rating">Pound Rating</th>
-								<th class="m-table_th m-table_reference">Reference</th>
-								<th class="m-table_th m-table_value">Value</th>
-							</tr>
-						</thead>
-						<tbody class="m-table_tbody">
-							<tr class="m-table_tr">
-								<td class="m-table_td m-table_supplier">
-									<a href="#">Supplier name</a>
-								</td>
-								<td class="m-table_td m-table_rating">
-
-									<div class="m-rate">
-										<div class="m-rate_numeric">3/5</div>
-										<div class="m-rate_iconic">
-											<span class="m-rate_item is-active"></span>
-											<span class="m-rate_item is-active"></span>
-											<span class="m-rate_item is-active"></span>
-											<span class="m-rate_item"></span>
-											<span class="m-rate_item"></span>
-										</div>
-									</div>
-								</td>
-								<td class="m-table_td m-table_reference">49978</td>
-								<td class="m-table_td m-table_value">£1,620</td>
-							</tr>
-							<tr class="m-table_tr">
-								<td class="m-table_td m-table_supplier">
-									<a href="#">Supplier name</a>
-								</td>
-								<td class="m-table_td m-table_rating">
-									<div class="m-rate">
-										<div class="m-rate_numeric">3/5</div>
-										<div class="m-rate_iconic">
-											<span class="m-rate_item"></span>
-											<span class="m-rate_item"></span>
-											<span class="m-rate_item"></span>
-											<span class="m-rate_item"></span>
-											<span class="m-rate_item"></span>
-										</div>
-									</div>
-								</td>
-								<td class="m-table_td m-table_reference">45678</td>
-								<td class="m-table_td m-table_value">£2,117</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-
-				<div class="b-pagination">
-					<div class="m-pagination">
-						<a href="#" class="m-pagination_item m-pagination_nav m-pagination_prev"></a>
-						<a href="#" class="m-pagination_item">1</a>
-						<a href="#" class="m-pagination_item">2</a>
-						<a href="#" class="m-pagination_item">3</a>
-						<a href="#" class="m-pagination_item is-active">4</a>
-						<a href="#" class="m-pagination_item m-pagination_nav m-pagination_next is-disabled"></a>
-					</div>
-				</div>
+			<main class="b-mainContent" ng-controller="MainController">
+				<div ng-include="'templates/search.html'"></div>
+				<div ng-include="'templates/suppliers.html'" ng-show="paymentList"></div>
+				<div ng-include="'templates/pagination.html'" ng-show="pagination"></div>
 			</main>
 		</section>
 

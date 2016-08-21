@@ -22,12 +22,6 @@ module.exports = {
             query: {
                 presets: ['es2015']
             }
-        }, {
-            test: /jquery\.js$/,
-            loader: 'expose?$'
-        }, {
-            test: /jquery\.js$/,
-            loader: 'expose?jQuery'
         }]
     },
     output: {
