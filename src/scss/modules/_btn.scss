@@ -8,6 +8,7 @@
 	display: inline-block;
 	padding: 10px 20px;
 	position: relative;
+	cursor: pointer;
 	@include breakpoint(phone) {
 		margin-left: 5px;
 	}

@@ -1,12 +1,13 @@
 .m-rate {
 	.m-rate_numeric {
-		@include breakpoint(phone) {
+		@include breakpoint(phone_big) {
 			display: none;
 		}
 	}
 	.m-rate_iconic {
+		white-space: nowrap;
 		display: none;
-		@include breakpoint(phone) {
+		@include breakpoint(phone_big) {
 			display: block;
 		}
 	}
@@ -15,6 +16,7 @@
 			content: "£";
 		}
 		display: inline-block;
+		margin: 0 2px;
 		width: 26px;
 		height: 26px;
 		line-height: 24px;
