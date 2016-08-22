@@ -5,26 +5,8 @@
 (function() {
     var app = angular.module("paymentsViewer", ["pathgather.popeye"]);
 
-    var MainController = function($scope, payments, Popeye) {
+    var MainController = function($scope, payments, pagination, modal, Popeye) {
         var paymentData;
-
-        // get current page number with provided offset
-        var getCurrentPage = function(offset) {
-            var currentPage = offset;
-
-            if (typeof paymentData !== "undefined") {
-                currentPage = currentPage + parseInt(paymentData.pagination.current);
-                if (currentPage > paymentData.pagination.total) {
-                    currentPage = paymentData.pagination(total);
-                }
-            }
-
-            if (currentPage < 0) {
-                currentPage = 0;
-            }
-
-            return currentPage;
-        };
 
         // handler for displaying data from payment API
         var onPaymentDataFetch = function(data) {
@@ -52,7 +34,7 @@
 
             // handler for prev/next elements in pagination
             if (typeof settings.pageOffset !== "undefined") {
-                page = getCurrentPage(settings.pageOffset);
+                page = pagination.getCurrentPage(paymentData, settings.pageOffset);
             }
 
             // if there is query provided in settings object, then get payment list for that query
@@ -75,12 +57,10 @@
 
         $scope.openModal = function(payment) {
         	$scope.payment = payment;
-            var modal = Popeye.openModal({
-                templateUrl: "templates/modal.html",
-                scope: $scope
-            });
+        	modal.openModal($scope);
         };
 
+		// search for payments on initialization
         var init = function() {
         	search();
         };
