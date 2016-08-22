@@ -9,7 +9,7 @@
 			</tr>
 		</thead>
 		<tbody class="m-table_tbody">
-			<tr class="m-table_tr" ng-repeat="payment in paymentList">
+			<tr class="m-table_tr" ng-repeat="payment in paymentList" ng-click="openModal(payment)">
 				<td class="m-table_td m-table_supplier">
 					{{ payment.payment_supplier }}
 				</td>

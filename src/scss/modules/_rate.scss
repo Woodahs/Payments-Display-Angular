@@ -15,6 +15,7 @@
 		&:before {
 			content: "£";
 		}
+		text-align: center;
 		display: inline-block;
 		margin: 0 2px;
 		width: 26px;
@@ -32,6 +33,13 @@
 			color: $cl-white;
 			background: $cl-blue4C;
 			background: linear-gradient($cl-blue62, $cl-blue4C);
+		}
+	}
+}
+.b-modal {
+	.m-rate {
+		.m-rate_iconic {
+			display: block;
 		}
 	}
 }

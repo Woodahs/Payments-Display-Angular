@@ -1,0 +1,20 @@
+<div class="b-modal">
+	<div class="m-modal">
+		<h2 class="m-modal_supplier">
+			Supplier: {{ payment.payment_supplier }}
+		</h2>
+		<div class="m-modal_rating">
+			<div class="m-rate">
+				<div class="m-rate_iconic">
+					<span ng-repeat="rate in [1, 2, 3, 4, 5]" ng-class="{'is-active': rate <= payment.payment_cost_rating}" class="m-rate_item"></span>
+				</div>
+			</div>
+		</div>
+		<div class="m-modal_reference">
+			Reference: {{ payment.payment_ref }}
+		</div>
+		<div class="m-modal_amoount">
+			Value: £{{ payment.payment_amount }}
+		</div>
+	</div>
+</div>

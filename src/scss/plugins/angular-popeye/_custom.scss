@@ -1,0 +1,12 @@
+.popeye-modal-container {
+    .popeye-modal {
+        max-width: 400px;
+        width: 90%;
+        a.popeye-close-modal {
+            font-size: 20px;
+            color: $cl-grey2;
+            top: 5px;
+            right: 12px;
+        }
+    }
+}

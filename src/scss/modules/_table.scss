@@ -21,6 +21,7 @@ $rwdBreakpoint: tablet;
 		color: $cl-grey5;
 	}
 	.m-table_tr {
+		cursor: pointer;
 		&:nth-of-type(2n) {
 			background: $cl-greyF8;
 			background: linear-gradient(to bottom, $cl-greyF8, $cl-greyF6);

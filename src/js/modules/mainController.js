@@ -3,9 +3,9 @@
  */
 
 (function() {
-    var app = angular.module("paymentsViewer", []);
+    var app = angular.module("paymentsViewer", ["pathgather.popeye"]);
 
-    var MainController = function($scope, payments) {
+    var MainController = function($scope, payments, Popeye) {
         var paymentData;
 
         // get current page number with provided offset
@@ -73,7 +73,19 @@
             search();
         };
 
-        search();
+        $scope.openModal = function(payment) {
+        	$scope.payment = payment;
+            var modal = Popeye.openModal({
+                templateUrl: "templates/modal.html",
+                scope: $scope
+            });
+        };
+
+        var init = function() {
+        	search();
+        };
+
+		init();
     };
 
     app.controller("MainController", MainController);
